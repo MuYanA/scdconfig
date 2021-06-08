@@ -25,7 +25,6 @@ feign:
   hystrix:
     enabled: true
 
-
 #设置ribbon
 ribbon:
   # ribbon建立连接后从服务器读取到可用资源所用的时间, 默认值1秒
@@ -46,7 +45,7 @@ ribbon:
   OkToRetryOnAllOperations: false
 
   # 同一台实例最大重试次数,不包括首次调用，默认0
-  MaxAutoRetries: 1
+  MaxAutoRetries: 0
 
   # 重试负载均衡其他的实例最大次数,不包括首次调用，默认1
   MaxAutoRetriesNextServer: 1
@@ -54,4 +53,4 @@ ribbon:
 #为了测试，这里自定义一个文件上传路径，供网关微服务获取
 upload:
   pic:
-    path: dev:\uploadfiles
+    path: D:\uploadfiles
