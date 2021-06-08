@@ -8,7 +8,7 @@ hystrix:
             #超时时间，默认1000ms
             #注意：这里的时间大小取决于ribbon的ReadTimeout，ConnectTimeout，超时重试次数，重试负载均衡次数。
             #计算公式：(1+MaxAutoRetriesNextServer+(1+MaxAutoRetriesNextServer)*MaxAutoRetries)*(ReadTimeout+ConnectTimeout)，
-            #考虑网络因素，计算结果最好再加1
+            #考虑网络因素，计算结果最好再加1秒
             timeoutInMilliseconds: 11000
       circuitBreaker:
         #熔断器开启的阀值，具体指在最近统计时间(默认10s)内请求的次数(默认20次)。也就是10秒内至少请求20次，才触发熔断器机制
@@ -50,7 +50,7 @@ ribbon:
   # 重试负载均衡其他的实例最大次数,不包括首次调用，默认1
   MaxAutoRetriesNextServer: 1
 
-#为了测试，这里自定义一个文件上传路径，供网关微服务获取
+#设置文件上传路径，仅作测试
 upload:
   pic:
-    path: D:\uploadfiles
+    path: c:/uploadFiles
